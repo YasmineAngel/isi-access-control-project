@@ -8,12 +8,23 @@
 
 ## Question 1
 
-Réponse
+Réponse : 
+- Yes it can write . The user toto does not have the permission to write but because the process launched by toto will have the user group ubuntu and the members of the group ubuntu are allowed to write . the second triplet -rw in the  -r--rw-r-- represents the permissions of the users that belong to the group ubuntu .
 
 ## Question 2
 
-Réponse
-
+- the x for a directory is permission to acess the directory 
+- after removing the permission for the group ubuntu sudo chmod g-x mydir and trying to acess the directory cd mydir as toto we get : "bash: cd: mydir: Permission denied " : the user toto can't access the directory because he is part of the group ubuntu but the members of the group do not have the permission to execute . the system checks EUID and RUID , they do not match so it checks RGID and EGID they match but does not have permission.
+- after creating the data.txt as ubuntu and running ls -al mydir as toto :
+ls -al mydir
+ls: cannot access 'mydir/..': Permission denied
+ls: cannot access 'mydir/data.txt': Permission denied
+ls: cannot access 'mydir/.': Permission denied
+total 0
+d????????? ? ? ? ?              ? .
+d????????? ? ? ? ?              ? ..
+-????????? ? ? ? ?              ? data.txt
+Why ? : since the user toto does not have acess permission to mydir he shouldn't be allowed to know information about the files inside the folder mydir .
 ## Question 3
 
 Réponse

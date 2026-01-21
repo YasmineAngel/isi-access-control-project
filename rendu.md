@@ -30,7 +30,7 @@ Why ? : since the user toto does not have acess permission to mydir he shouldn't
 ## Question 3
 
 - ./myopen mydir/data.txt as toto : 
-values of the ids : 
+values of the ids (toto's) : 
 RUID: 1001, EUID: 1001
 RGID: 1001, EGID: 1001
 can't open file: Permission denied
@@ -38,14 +38,15 @@ it can't open the file because toto doesn't have permission x  for data.txt
 
 - chmod u+s myopen : 
 toto@isi1:/home/ubuntu$ ./myopen mydir/data.txt
-RUID: 1001, EUID: 1000
+RUID: 1001, EUID: 1000 (ubuntu's)
 RGID: 1001, EGID: 1001
 File opened successfully!
 yes it can open the file .
 
 ## Question 4
-
-Réponse
+values (toto's): 
+EUID: 1001
+EGID: 1001
 
 ## Question 5
 

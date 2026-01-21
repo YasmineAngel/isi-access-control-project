@@ -96,7 +96,8 @@ toto:x:1001:1001:,,,:/home/toto:/bin/bash
 
 ## Question 6
 
-Réponse
+The password are stored in : /etc/shadow
+why ? because the /etc/passwd file must remain readable to allow system tools to map User IDs to names. but passwords need to be protected .
 
 ## Question 7
 
